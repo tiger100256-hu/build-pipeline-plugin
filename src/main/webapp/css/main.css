@@ -151,7 +151,8 @@ div.pipeline-wrapper div.pipeline {
     width: 100%;
     min-width: 180px;
     background-color: #a9a9a9;
-    padding: 4px;
+    padding: 0px;
+    height: 98%;
 }
 
 .build-card .build-info {
@@ -243,12 +244,26 @@ table.pipelines {
 }
 
 table.pipelines > tbody > tr > td {
-    padding: 0 8px 12px 0;
+    padding: 0 0 0 0;
+    margin: 0;
+    height: 130px
 }
+table.pipelines > tbody > tr  {
+    padding: 0 0 0 0;
+    margin: 0;
+    height: 130px
+}
+
 
 table.pipelines td.next {
     width: 30px;
-    vertical-align: middle;
+}
+table{
+    border-spacing: 0px;
+}
+.svg {
+    height: 135px;
+    display: block;
 }
 
 .revision {
@@ -346,3 +361,9 @@ a:hover {
     color: expression(this.parentNode.currentStyle['color']);
     font-weight: inherit;
 }
+.vline{
+    margin-top: 100px;
+    width: 100px;
+    border-bottom: 1px solid #000000;
+}
+
