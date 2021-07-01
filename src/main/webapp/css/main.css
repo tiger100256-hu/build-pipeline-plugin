@@ -1,7 +1,7 @@
 /* ----- jenkins-layout: overridden ----- */
 
 #page-body #side-panel {
-    display: none;
+    display: block;
 }
 
 #page-body #main-panel {
@@ -344,7 +344,7 @@ table{
 }
 
 #view-message {
-    display: none;
+    display: block;
 }
 
 a:link,a:visited,a:active {

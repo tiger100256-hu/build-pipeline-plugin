@@ -1,3 +1,18 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
+  <j:if test="${it.embeddedCss != null}">
+      <link rel="stylesheet" href="${it.embeddedCss}"/>
+  </j:if>
+  <j:set var="views" value="${it.owner.views}"/>
+  <j:set var="currentView" value="${it}"/>
+  <j:if test="${!it.isPortletView}">
+      <j:choose>
+          <j:when test="${it.owner.class.name=='hudson.model.MyViewsProperty'}">
+              <st:include page="myViewTabs.jelly" it="${it.owner.myViewsTabBar}"/>
+          </j:when>
+          <j:otherwise>
+              <st:include page="viewTabs.jelly" it="${it.owner.viewsTabBar}"/>
+          </j:otherwise>
+      </j:choose>
+  </j:if>
   <st:include page="bpp.jelly" />
 </j:jelly>
