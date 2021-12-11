@@ -26,6 +26,7 @@ div.pipeline-wrapper.header {
 div.pipeline-wrapper {
     position: relative;
     min-width: 100px;
+    min-height: 130px;
 }
 
 div.pipeline-info {
@@ -44,6 +45,8 @@ div.pipeline-wrapper div.pipeline {
     margin-left: 120px;
     overflow: auto;
     padding: 0 10px 20px 0;
+    display: block;
+    visibility: hidden;
 }
 
 

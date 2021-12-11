@@ -114,3 +114,42 @@ BuildPipeline.prototype = {
 	}
 
 }
+
+jQuery(document).ready(function(){
+    var itemList = document.getElementsByClassName('title');
+    for(var i = 0; i < itemList.length; i++){
+       var pipelineItem = itemList.item(i);
+       var pipelineId = pipelineItem.id;
+       var id = pipelineId.substr(9);
+       var tableId = 'table-' + id;
+       var item = document.getElementById(tableId);
+       var sessionValue = sessionStorage.getItem(tableId);
+       if(jQuery.isEmptyObject(sessionValue)){
+           item.hide()
+           sessionStorage.setItem(tableId, "hide");
+       } else {
+           if(sessionValue == "hide") {
+               item.hide();
+           } else {
+               item.style.display = 'block'
+               item.style.visibility = 'visible'
+               item.show();
+           }
+       }
+       pipelineItem.on('click', function(){
+           var pipelineId = this.id;
+           var id = pipelineId.substr(9);
+           var tableId = 'table-' + id;
+           var item = document.getElementById(tableId);
+           if (item.style.display == 'none') {
+               item.style.display = 'block'
+               item.style.visibility = 'visible'
+               item.show()
+               sessionStorage.setItem(tableId, "show");
+           } else {
+               item.hide()
+               sessionStorage.setItem(tableId, "hide");
+           }
+       });
+    }
+});
