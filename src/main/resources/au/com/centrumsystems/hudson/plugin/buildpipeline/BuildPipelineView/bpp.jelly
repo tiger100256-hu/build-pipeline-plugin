@@ -113,11 +113,16 @@
                 <st:include page="noJob.jelly" />
             </j:if>
 
+            <div class="ui-widget">
+              <label for="filters_tags">filter: </label>
+                <input id="filters_tags" title="please input first 8 num of commit id or first 6 char of branch name." />
+            </div>
+
             <st:include from="${from.getColumnHeaders()}" it="${from}"
                         page="columnHeader.jelly"/>
 
             <j:forEach items="${buildPipelineForm.getBuildGrids()}" var="buildGrid" indexVar="i">
-            <div class="pipeline-wrapper">
+            <div class="pipeline-wrapper" id="pipeline-wrapper-${buildGrid.get(0,0).getRevision()}">
                 <st:include from="${from.getRowHeaders()}" it="${from}"
                             page="rowHeader.jelly"/>
 
